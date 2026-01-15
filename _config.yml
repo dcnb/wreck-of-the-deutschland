@@ -1,0 +1,104 @@
+##########
+# CB-ESSAY COLLECTION
+#
+# CB-Essay extends CollectionBuilder to support essay/monograph publishing alongside digital collections.
+# Essays are Markdown files in the _essay/ folder with front matter controlling their display order.
+#
+# How it works:
+# 1. Create .md files in _essay/ with front matter (title, order, optional byline)
+# 2. Essays appear in sequential order based on the "order" field
+# 3. Automatic prev/next navigation between essays
+# 4. Choose essay or monograph theme in _data/theme.yml
+#
+# Learn more: docs/cb-essay/essay-writing.md
+
+collections:
+  essay:
+    sort_by: order  # Essays display in order based on "order" field in front matter
+    output: true    # Generate individual HTML pages for each essay
+
+defaults:
+  -
+    scope:
+      path: ""              # Apply to all files in _essay/
+      type: "essay"         # Jekyll collection type
+    values:
+      layout: "essay-content"                 # Layout template for essay pages
+      permalink: /essay/:slug:output_ext      # URL pattern: /essay/filename.html
+
+##########
+# collectionbuilder-csv
+# Jekyll Digital Collection Generator
+# https://github.com/CollectionBuilder/collectionbuilder-csv
+##########
+
+##########
+# URL VARIABLES
+#
+# site domain, full URL to the production location of your collection
+url: 
+# path to location on the domain if necessary e.g. /digital/hjccc
+baseurl: 
+# location of code, the full url to your github repository
+source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
+
+##########
+# SITE SETTINGS
+#
+# title of site appears in banner
+title: CB-Essay
+author: 
+# tagline, a short phrase that will appear throughout the site in the top banner
+tagline: Essay in the front, CollectionBuilder in the back
+# description appears in meta tags and other locations
+# this description might appear in search result lists, keep around 160 characters max
+description: "CB-Essay combines CollectionBuilder-CSV with essay and exhibit capabilities, allowing you to create multi-modal narratives that incorporate items from your digital collection directly into your writing and pages."
+# keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
+keywords: digital humanities; multimodal essays; lib-static
+# creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
+exhibit-creator: dcnb
+
+##########
+# COLLECTION SETTINGS
+#
+# Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
+# Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
+metadata: demo-compoundobjects-metadata 
+# page generation settings [optional!]
+# [optional: only used if you need to tweak CB defaults or generate from more than one data file]
+# page_gen:
+#   - data: 'demo-metadata'
+#     template: 'item'
+#     name: 'objectid'
+#     dir: 'items'
+#     extension: 'html' 
+#     filter: 'objectid'  
+
+##########
+# Site/Organization Branding 
+#   Enter information for your organization (replacing the CDIL links and name below) if you'd like to brand your site with a logo
+#   To remove the branding, comment out these values, or delete them. 
+#
+organization-name: "Center for Digital Inquiry and Learning (CDIL)"
+organization-link: https://cdil.lib.uidaho.edu/
+organization-logo-banner: https://cdil.lib.uidaho.edu/storying-extinction/assets/img/cdil.png
+organization-logo-nav: https://cdil.lib.uidaho.edu/assets/img/logo.png
+
+##########
+# ROBOTS EXCLUDE
+#
+# set noindex to true if you do NOT want Google to index your site
+# noindex: true 
+
+##########
+# BUILD SETTINGS 
+#
+# Note: use environment variable on build command to include analytics
+# JEKYLL_ENV=production jekyll build
+# (this is done automatically by gh-pages build)
+#
+# ignore stuff
+exclude: [docs/, Rakefile, rakelib/, README.md, LICENSE, CITATION.cff, CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md]
+# compress CSS output
+sass:
+  style: compressed

@@ -3,13 +3,13 @@ layout: essay-content
 title: The Wreck of the Deutschland
 author: Gerard Manley Hopkins
 header-info: "Written 1875-75 | First published 1918"
-permalink: /essay/wreck-of-the-deutschland.html 
 featured-image: "/assets/img/deutschland.jpg"
+order: 1
 ---
 
 {% include essay/new-section.html font-size="3" %}
 *To the happy memory of five Franciscan Nuns exiles by the Falk Laws drowned between midnight and morning of Dec. 7th. 1875*
-
+ 
 
 
 

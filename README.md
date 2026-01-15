@@ -4,7 +4,7 @@
 
 Built on CollectionBuilder, CB-Essay combines long-form narrative writing with items from your digital collection. Create annotated editions, scholarly essays with integrated primary sources, or multimodal monographs that blend text and collection items seamlessly.
 
-[**View Demo Site**](#) <!-- Add your demo URL here -->
+[**View Demo Site**](https://collectionbuilder.github.io/cb-essay/)
 
 ---
 
